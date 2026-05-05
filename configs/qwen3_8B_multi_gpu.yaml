@@ -1,0 +1,3 @@
+model: vllm
+model_args: "pretrained=Qwen/Qwen3-8B,load_format=safetensors,dtype=auto,gpu_memory_utilization=0.7,tensor_parallel_size=4"
+batch_size: auto

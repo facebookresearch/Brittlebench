@@ -1,0 +1,3 @@
+model: vllm
+model_args: "pretrained=mistralai/Ministral-8B-Instruct-2410,dtype=auto,load_format=safetensors,gpu_memory_utilization=0.8,data_parallel_size=2"
+batch_size: auto

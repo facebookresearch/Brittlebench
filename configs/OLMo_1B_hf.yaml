@@ -1,0 +1,3 @@
+model: vllm
+model_args: "pretrained=allenai/OLMo-1B-hf,dtype=auto"
+batch_size: auto

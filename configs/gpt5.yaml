@@ -1,0 +1,3 @@
+model: openai-completions
+model_args: "base_url=https://api.llama.com/compat/v1/completions,model=llama4-maverick-17b-128e-instruct,tokenizer_backend=tiktoken"
+batch_size: auto
