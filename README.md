@@ -20,46 +20,14 @@ git submodule update
 make setup
 ```
 
-3. Make sure you're logged in to Weights and Biases
-```bash
-wandb login --host='https://fairwandb.org'
-```
-
-4. Make sure that your HuggingFace credentials are set up:
+3. Make sure that your HuggingFace credentials are set up:
 ```bash
 export HF_TOKEN=<YOUR-TOKEN-HERE>
 ```
 
 ## Launching a job 
 
-For supported jobs on AWS (FAIR cluster not supported yet), see the [Makefile](https://github.com/fairinternal/BrittleBench/blob/main/Makefile).
-
-Please change the `--stacks` parameter to add the specific perturbation based on the **supported perturbations** mentioned below.
-
-### Slurm batch mode
-
-From a submit node, launch a slurm job using make, e.g.:
-```bash
-make SAVE_LOC=<PATH-TO-SAVE-DIR> SLURM_ACCOUNT=<YOUR-SLURM-ACCOUNT-HERE> SLURM_QOS=<YOUR-SLURM-QOS-HERE> run_brittlebench_slurm
-```
-
-See the [Makefile](https://github.com/fairinternal/BrittleBench/blob/main/Makefile) for details of what this job does.
-
-You can track the logs using the [FAIR Hub](https://www.internalfb.com/fair_hub/jobs).
-
-### Slurm interactive mode
-
-Request an interactive session on an 8-GPU node with all available memory, using your assigned account/qos:
-```bash
-srun --account=<YOUR-SLURM-ACCOUNT-HERE> --qos <YOUR-SLURM-QOS-HERE> --time=0-01:00:00 --gres=gpu:8 --mem 0 --pty /bin/bash
-```
-
-Launch a local job using make, e.g.:
-```bash
-make SAVE_LOC=<PATH-TO-SAVE-DIR> run_brittlebench_local
-```
-
-See the [Makefile](https://github.com/fairinternal/BrittleBench/blob/main/Makefile) for details of what this job does.
+See the Makefile. Please change the `--stacks` parameter to add the specific perturbation based on the **supported perturbations** mentioned below.
 
 ## (Optional) Activating the environment
 
