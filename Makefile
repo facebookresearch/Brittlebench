@@ -11,13 +11,10 @@ USER := $(shell whoami)
 PWD := $(shell pwd)
 ROOT := $(shell cd ..;  pwd)
 HF_HOME:=/home/$(USER)/.cache/huggingface/
-# On the AWS A100 cluster, this defaults to shared directory without write-access causing permissions errors, so override it
 HF_DATASETS_CACHE=/home/$(USER)/.cache/huggingface/
 
 # Set default parameters for backwards-compatibility 
-SAVE_LOC?=/checkpoint/srai/$(USER)/results
-SLURM_ACCOUNT?=srai
-SLURM_QOS?=h200_dev
+SAVE_LOC?=results/
 
 setup:
 	uv sync
